@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học tiếng Nhật</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="main-menu">
+        <h1 class="title">Học tiếng Nhật thui nè</h1>
+        <p class="subtitle">Chọn cái muốn học đi</p>
+        <button class="btn" onclick="startQuiz('hiragana')">Học bản chữ cái Hiragana</button>
+        <button class="btn" onclick="startQuiz('katakana')">Học bản chữ cái Katakana</button>
+    </div>
+
+    <div class="container hidden" id="quiz-screen">
+        <button class="btn-back" onclick="goToMainMenu()">Thoát</button>
+        
+        <div class="info-bar">
+            <p id="word-count">Số chữ hiện tại: 5</p>
+            <p id="chances-left">Cơ hội còn lại: 2</p>
+        </div>
+        
+        <div class="question-box">
+            <p class="question-text" id="question-char"></p>
+        </div>
+        
+        <p class="instruction" id="instruction-text"></p>
+        
+        <input type="text" id="answer-input" placeholder="Nhập cách đọc">
+        
+        <div id="answer-display" class="answer-display hidden"></div>
+
+        <button class="btn" id="submit-btn">Submit</button>
+        <button class="btn hidden" id="next-btn">Qua câu tiếp theo</button>
+        <button class="btn" id="add-word-btn">Thêm chữ cái</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
