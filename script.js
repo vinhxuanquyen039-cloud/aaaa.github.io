@@ -57,11 +57,12 @@ function generateQuestion() {
     submitBtn.disabled = false;
     nextBtn.classList.add('hidden');
     answerDisplay.classList.add('hidden');
+    answerInput.disabled = false; // Sửa lỗi ở đây
 }
 
 submitBtn.addEventListener('click', () => {
     const userAnswer = answerInput.value.toLowerCase().trim();
-    const correctAnswer = romaji[hiragana.indexOf(currentList[currentIndex])].toLowerCase();
+    const correctAnswer = romaji[currentList.indexOf(currentList[currentIndex])].toLowerCase();
 
     if (userAnswer === correctAnswer) {
         alert('Chính xác!');
@@ -79,7 +80,7 @@ submitBtn.addEventListener('click', () => {
 });
 
 function showCorrectAnswer() {
-    const correctAnswer = romaji[hiragana.indexOf(currentList[currentIndex])];
+    const correctAnswer = romaji[currentList.indexOf(currentList[currentIndex])];
     answerDisplay.textContent = `Đáp án là: ${correctAnswer}`;
     answerDisplay.classList.remove('hidden');
     submitBtn.disabled = true;
